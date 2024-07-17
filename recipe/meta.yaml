@@ -13,6 +13,8 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
+  entry_points:
+    - normalizer = charset_normalizer.cli:cli_detect
   skip: True  # [py<37]
 
 requirements:
