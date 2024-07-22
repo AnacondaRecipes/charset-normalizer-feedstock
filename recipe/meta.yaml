@@ -36,7 +36,7 @@ test:
     - pip
 
 about:
-  home: https://github.com/ousret/charset_normalizer
+  home: https://github.com/jawah/charset_normalizer
   summary: The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
   description: |
     A Library that helps you read text from unknown charset encoding. This project is motivated by chardet.
