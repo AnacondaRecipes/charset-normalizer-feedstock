@@ -12,19 +12,19 @@ source:
 
 build:
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
   entry_points:
     - normalizer = charset_normalizer.cli:cli_detect
-  skip: True  # [py<37]
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
     - setuptools
     - wheel
   run:
-    - python
+    - python >=3.7
 
 test:
   imports:
