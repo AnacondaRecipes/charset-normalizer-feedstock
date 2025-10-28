@@ -1,5 +1,5 @@
 {% set name = "charset-normalizer" %}
-{% set version = "3.3.2" %}
+{% set version = "3.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,23 +7,23 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/charset-normalizer-{{ version }}.tar.gz
-  sha256: f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5
+  sha256: 94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a
 
 build:
-  number: 1
-  noarch: python
+  number: 0
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
   entry_points:
     - normalizer = charset_normalizer.cli:cli_detect
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
-    - setuptools
+    - setuptools>=68,<=81
     - wheel
   run:
-    - python >=3.7
+    - python
 
 test:
   imports:
