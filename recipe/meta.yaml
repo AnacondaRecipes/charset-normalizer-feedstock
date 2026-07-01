@@ -20,7 +20,7 @@ requirements:
   host:
     - python
     - pip
-    - setuptools    >=68,<=81
+    - setuptools >=68,<82.1
     - wheel
   run:
     - python
@@ -28,11 +28,16 @@ requirements:
 test:
   imports:
     - charset_normalizer
+  source_files:
+    - tests
+    - data
   commands:
     - pip check
     - normalizer --help
+    - pytest -v tests/
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/jawah/charset_normalizer
